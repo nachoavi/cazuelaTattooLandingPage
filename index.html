@@ -214,6 +214,7 @@ body::before{
 }
 .filter:hover{ color:var(--text); border-color:var(--text); }
 .filter.active{ background:var(--accent); border-color:var(--accent); color:#140600; }
+.gallery__more{ text-align:center; margin-top:2.2rem; }
 
 .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; grid-auto-rows:230px; }
 .tile{ position:relative; overflow:hidden; cursor:pointer; }
@@ -309,6 +310,9 @@ body::before{
 .footer__links li{ margin-bottom:.55rem; }
 .footer__links a{ color:var(--muted); font-size:.95rem; transition:color .25s; }
 .footer__links a:hover{ color:var(--accent); }
+.footer__place{ display:block; margin-bottom:1.1rem; max-width:280px; }
+.footer__place img{ width:100%; height:130px; object-fit:cover; border:1px solid var(--line); filter:grayscale(.35); transition:filter .35s var(--ease), transform .35s var(--ease); }
+.footer__place:hover img{ filter:none; transform:translateY(-3px); }
 .footer__social{ display:flex; gap:.7rem; margin-top:.3rem; }
 .footer__social a{ width:42px; height:42px; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; transition:.3s var(--ease); }
 .footer__social a:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-3px); }
@@ -430,7 +434,7 @@ body::before{
     </div>
     <div class="pillar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-      <div><h3>Pasión por el arte</h3><p>Más de una década dedicada a tatuar con dedicación.</p></div>
+      <div><h3>Pasión por el arte</h3><p>Seis años dedicados a tatuar con pasión y dedicación.</p></div>
     </div>
   </div>
 </section>
@@ -444,11 +448,11 @@ body::before{
       <span class="eyebrow">Sobre mí</span>
       <h2 class="section-title">PURO OFICIO<br><em>Y HARTA TINTA</em></h2>
       <!-- >>> REEMPLAZAR: texto biográfico editable <<< -->
-      <p>Soy <strong>Cazuela</strong>. Llevo más de diez años haciendo de la piel mi lienzo, dominando desde el <strong>fineline</strong> más delicado hasta el <strong>blackwork</strong> más potente.</p>
+      <p>Soy <strong>Cazuela</strong>. Llevo 6 años haciendo de la piel mi lienzo, dominando desde el <strong>fineline</strong> más delicado hasta el <strong>blackwork</strong> más potente.</p>
       <p>Creo en el tatuaje como una colaboración: tú traes la idea, yo le pongo técnica, carácter y un cuidado obsesivo por el detalle. Trabajo con material de primera y bajo estrictos protocolos de higiene.</p>
       <div class="about__stats">
-        <div><div class="num">+10</div><div class="lbl">Años tatuando</div></div>
-        <div><div class="num">+2.5k</div><div class="lbl">Tatuajes</div></div>
+        <div><div class="num">6</div><div class="lbl">Años tatuando</div></div>
+        <div><div class="num">+2.500</div><div class="lbl">Tatuajes</div></div>
         <div><div class="num">100%</div><div class="lbl">Higiene</div></div>
       </div>
     </div>
@@ -503,6 +507,36 @@ body::before{
       <figure class="tile" data-cat="lettering"><img loading="lazy" src="imgs/PHOTO-2026-05-22-22-02-24%202.jpg" alt="Lettering en japonés"><div class="tile__cap"><span>Lettering</span></div></figure>
       <figure class="tile tall" data-cat="fineline"><img loading="lazy" src="imgs/PHOTO-2026-05-22-22-02-23%203.jpg" alt="Hongos y lirios, fineline"><div class="tile__cap"><span>Fineline</span></div></figure>
       <figure class="tile" data-cat="color"><img loading="lazy" src="imgs/PHOTO-2026-05-22-22-02-24%204.jpg" alt="Manga a color"><div class="tile__cap"><span>Color</span></div></figure>
+
+      <!-- >>> Trabajos nuevos (mayo 2026). Se muestran al pulsar "Cargar más trabajos" <<< -->
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.49.jpeg" alt="Máscara kitsune japonesa, blackwork"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="realismo"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.49%20(1).jpeg" alt="Rosas y ojo realista"><div class="tile__cap"><span>Realismo</span></div></figure>
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.50.jpeg" alt="Manga de anime en negros"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.50%20(1).jpeg" alt="Luffy de One Piece, blackwork"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="color"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.50%20(2).jpeg" alt="Sylveon a color"><div class="tile__cap"><span>Color</span></div></figure>
+      <figure class="tile tall" data-cat="fineline"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.51.jpeg" alt="Flores de lis, fineline"><div class="tile__cap"><span>Fineline</span></div></figure>
+      <figure class="tile" data-cat="fineline"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.51%20(1).jpeg" alt="Ilustración de chica y gatos, fineline"><div class="tile__cap"><span>Fineline</span></div></figure>
+      <figure class="tile tall" data-cat="realismo"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.51%20(2).jpeg" alt="Chucky, realismo"><div class="tile__cap"><span>Realismo</span></div></figure>
+      <figure class="tile" data-cat="realismo"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.51%20(3).jpeg" alt="Pulpo realista"><div class="tile__cap"><span>Realismo</span></div></figure>
+      <figure class="tile tall" data-cat="realismo"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.52.jpeg" alt="Payasos estilo chicano con lettering"><div class="tile__cap"><span>Realismo</span></div></figure>
+      <figure class="tile" data-cat="oldschool"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.52%20(1).jpeg" alt="Flash tradicional: telaraña y rosa"><div class="tile__cap"><span>Old School</span></div></figure>
+      <figure class="tile" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.52%20(2).jpeg" alt="Cocodrilo en blackwork y dotwork"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="fineline"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.52%20(3).jpeg" alt="Ojos de anime, línea fina"><div class="tile__cap"><span>Fineline</span></div></figure>
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.53.jpeg" alt="Rama de olivo y encaje"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="oldschool"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.53%20(1).jpeg" alt="Pantera tradicional y corona de espinas"><div class="tile__cap"><span>Old School</span></div></figure>
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.53%20(2).jpeg" alt="Kurama de Naruto, blackwork"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="color"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.54.jpeg" alt="Ojos de Sasuke, a color"><div class="tile__cap"><span>Color</span></div></figure>
+      <figure class="tile tall" data-cat="blackwork"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.54%20(1).jpeg" alt="Gohan de Dragon Ball, blackwork"><div class="tile__cap"><span>Blackwork</span></div></figure>
+      <figure class="tile" data-cat="fineline"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.50.54%20(2).jpeg" alt="Diente de león y aves, fineline"><div class="tile__cap"><span>Fineline</span></div></figure>
+      <figure class="tile tall" data-cat="lettering"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.51.13.jpeg" alt="Lettering: un amor que pocos entienden"><div class="tile__cap"><span>Lettering</span></div></figure>
+      <figure class="tile" data-cat="realismo"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.51.13%20(1).jpeg" alt="Cadena con daga y cruz"><div class="tile__cap"><span>Realismo</span></div></figure>
+      <figure class="tile tall" data-cat="color"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.51.13%20(2).jpeg" alt="Itachi de Naruto, a color"><div class="tile__cap"><span>Color</span></div></figure>
+      <figure class="tile" data-cat="fineline"><img loading="lazy" src="imgs/WhatsApp%20Image%202026-05-23%20at%2015.51.13%20(3).jpeg" alt="Gato y estrellas, fineline"><div class="tile__cap"><span>Fineline</span></div></figure>
+    </div>
+
+    <!-- Botón para cargar más trabajos (los muestra por tandas vía JS) -->
+    <div class="gallery__more">
+      <button class="btn btn-ghost" id="loadMore" type="button">Cargar más trabajos</button>
     </div>
   </div>
 </section>
@@ -663,10 +697,13 @@ body::before{
       </div>
       <div>
         <h5>Visítame</h5>
+        <!-- Foto del lugar de trabajo: Edificio Cayetano -->
+        <a class="footer__place" href="https://www.google.com/maps?q=Cayetano+Letelier+225,+La+Uni%C3%B3n,+Los+R%C3%ADos" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps">
+          <img loading="lazy" src="imgs/EdificioCayetano.jpeg" alt="Edificio Cayetano, estudio en La Unión" />
+        </a>
         <ul class="footer__links">
-          <!-- >>> REEMPLAZAR: dirección exacta si se desea <<< -->
-          <li><a href="#">La Unión, Región de Los Ríos</a></li>
-          <li>Chile</li>
+          <li><a href="https://www.google.com/maps?q=Cayetano+Letelier+225,+La+Uni%C3%B3n,+Los+R%C3%ADos" target="_blank" rel="noopener">Cayetano Letelier 225, Of. 205</a></li>
+          <li>La Unión, Los Ríos</li>
           <li>Atención con cita previa</li>
         </ul>
       </div>
@@ -755,16 +792,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold:0.12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-  /* ---- GALERÍA: filtros por estilo ---- */
+  /* ---- GALERÍA: filtros por estilo + cargar más por tandas ---- */
   const tiles = Array.from(document.querySelectorAll(".tile"));
+  const loadMoreBtn = document.getElementById("loadMore");
+  const STEP = 12;                 // cuántos trabajos se muestran por tanda
+  let currentFilter = "all";
+  let shown = STEP;                // visibles actualmente en la vista "Todos"
+
+  const applyGallery = () => {
+    let matchCount = 0;
+    tiles.forEach(t => {
+      const matches = currentFilter === "all" || t.dataset.cat === currentFilter;
+      let visible = false;
+      if (matches) {
+        // En "Todos" se limita a las primeras `shown`; en un filtro se ven todas las de esa categoría
+        visible = currentFilter === "all" ? matchCount < shown : true;
+        matchCount++;
+      }
+      t.classList.toggle("hide", !visible);
+    });
+    // El botón solo aparece en "Todos" y mientras queden trabajos por mostrar
+    loadMoreBtn.style.display = (currentFilter === "all" && shown < tiles.length) ? "" : "none";
+  };
+
   document.querySelectorAll(".filter").forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      const f = btn.dataset.filter;
-      tiles.forEach(t => t.classList.toggle("hide", f !== "all" && t.dataset.cat !== f));
+      currentFilter = btn.dataset.filter;
+      shown = STEP;                // reiniciar la tanda al cambiar de filtro
+      applyGallery();
     });
   });
+  loadMoreBtn.addEventListener("click", () => { shown += STEP; applyGallery(); });
+  applyGallery();
 
   /* ---- GALERÍA: lightbox (solo recorre tiles visibles) ---- */
   const lb = document.getElementById("lightbox");
