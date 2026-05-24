@@ -201,6 +201,10 @@ body::before{
 .about__stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem; }
 .about__stats .num{ font-family:var(--f-display); font-size:2.6rem; color:var(--accent); line-height:1; }
 .about__stats .lbl{ font-family:var(--f-cond); text-transform:uppercase; letter-spacing:.08em; font-size:.85rem; color:var(--muted); }
+/* Especialidades del artista */
+.about__specs{ display:flex; flex-wrap:wrap; gap:.6rem; margin:1.6rem 0 .2rem; }
+.spec{ font-family:var(--f-cond); text-transform:uppercase; letter-spacing:.08em; font-weight:600; font-size:.82rem; padding:.42rem .9rem; border:1px solid var(--line); color:var(--text); }
+.spec--fav{ background:var(--accent); border-color:var(--accent); color:#140600; }
 
 /* ============================================================
    9. GALERÍA con filtros por estilo + lightbox
@@ -215,8 +219,6 @@ body::before{
 .filter:hover{ color:var(--text); border-color:var(--text); }
 .filter.active{ background:var(--accent); border-color:var(--accent); color:#140600; }
 .gallery__more{ text-align:center; margin-top:2.2rem; }
-/* Etiqueta del modo revisión de estilos (?debug): número + estilo en cada obra */
-.tile__dbg{ position:absolute; top:6px; left:6px; z-index:6; background:var(--accent); color:#140600; font-family:var(--f-cond); font-weight:700; font-size:.78rem; letter-spacing:.03em; padding:.22rem .5rem; pointer-events:none; }
 
 .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; grid-auto-rows:230px; }
 .tile{ position:relative; overflow:hidden; cursor:pointer; }
@@ -450,8 +452,14 @@ body::before{
       <span class="eyebrow">Sobre mí</span>
       <h2 class="section-title">PURO OFICIO<br><em>Y HARTA TINTA</em></h2>
       <!-- >>> REEMPLAZAR: texto biográfico editable <<< -->
-      <p>Soy <strong>Cazuela</strong>. Llevo 6 años haciendo de la piel mi lienzo, dominando desde el <strong>fineline</strong> más delicado hasta el <strong>blackwork</strong> más potente.</p>
+      <p>Soy <strong>Cazuela</strong>. Llevo 6 años haciendo de la piel mi lienzo. Me especializo principalmente en <strong>Anime</strong> —mi estilo favorito—, <strong>Blackwork</strong> y <strong>Black &amp; Grey</strong>.</p>
       <p>Creo en el tatuaje como una colaboración: tú traes la idea, yo le pongo técnica, carácter y un cuidado obsesivo por el detalle. Trabajo con material de primera y bajo estrictos protocolos de higiene.</p>
+      <!-- Especialidades del artista -->
+      <div class="about__specs">
+        <span class="spec spec--fav">Anime · Favorito</span>
+        <span class="spec">Blackwork</span>
+        <span class="spec">Black &amp; Grey</span>
+      </div>
       <div class="about__stats">
         <div><div class="num">6</div><div class="lbl">Años tatuando</div></div>
         <div><div class="num">+2.500</div><div class="lbl">Tatuajes</div></div>
@@ -829,20 +837,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   loadMoreBtn.addEventListener("click", () => { shown += STEP; applyGallery(); });
   applyGallery();
-
-  /* MODO REVISIÓN DE ESTILOS — abrir la web con ?debug en la URL.
-     Muestra todas las obras con una etiqueta "#número · estilo" para revisar
-     y corregir la clasificación. Invisible en la navegación normal. */
-  if (location.search.includes("debug")) {
-    tiles.forEach((t, i) => {
-      t.classList.remove("hide");
-      const tag = document.createElement("div");
-      tag.className = "tile__dbg";
-      tag.textContent = `#${i + 1} · ${t.dataset.cat}`;
-      t.appendChild(tag);
-    });
-    loadMoreBtn.style.display = "none";
-  }
 
   /* ---- GALERÍA: lightbox (solo recorre tiles visibles) ---- */
   const lb = document.getElementById("lightbox");
