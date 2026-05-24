@@ -215,6 +215,8 @@ body::before{
 .filter:hover{ color:var(--text); border-color:var(--text); }
 .filter.active{ background:var(--accent); border-color:var(--accent); color:#140600; }
 .gallery__more{ text-align:center; margin-top:2.2rem; }
+/* Etiqueta del modo revisión de estilos (?debug): número + estilo en cada obra */
+.tile__dbg{ position:absolute; top:6px; left:6px; z-index:6; background:var(--accent); color:#140600; font-family:var(--f-cond); font-weight:700; font-size:.78rem; letter-spacing:.03em; padding:.22rem .5rem; pointer-events:none; }
 
 .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; grid-auto-rows:230px; }
 .tile{ position:relative; overflow:hidden; cursor:pointer; }
@@ -826,6 +828,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   loadMoreBtn.addEventListener("click", () => { shown += STEP; applyGallery(); });
   applyGallery();
+
+  /* MODO REVISIÓN DE ESTILOS — abrir la web con ?debug en la URL.
+     Muestra todas las obras con una etiqueta "#número · estilo" para revisar
+     y corregir la clasificación. Invisible en la navegación normal. */
+  if (location.search.includes("debug")) {
+    tiles.forEach((t, i) => {
+      t.classList.remove("hide");
+      const tag = document.createElement("div");
+      tag.className = "tile__dbg";
+      tag.textContent = `#${i + 1} · ${t.dataset.cat}`;
+      t.appendChild(tag);
+    });
+    loadMoreBtn.style.display = "none";
+  }
 
   /* ---- GALERÍA: lightbox (solo recorre tiles visibles) ---- */
   const lb = document.getElementById("lightbox");
